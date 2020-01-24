@@ -49,6 +49,7 @@
 		0D12C42C23DB7676001C1618 /* wibashUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wibashUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D12C43023DB7676001C1618 /* wibashUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wibashUITests.swift; sourceTree = "<group>"; };
 		0D12C43223DB7676001C1618 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D12C43E23DB9E8D001C1618 /* wibash.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wibash.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +100,7 @@
 		0D12C40D23DB7674001C1618 /* wibash */ = {
 			isa = PBXGroup;
 			children = (
+				0D12C43E23DB9E8D001C1618 /* wibash.entitlements */,
 				0D12C40E23DB7674001C1618 /* AppDelegate.swift */,
 				0D12C41023DB7674001C1618 /* SceneDelegate.swift */,
 				0D12C41223DB7674001C1618 /* ContentView.swift */,
@@ -434,6 +436,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = wibash/wibash.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"wibash/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
@@ -444,6 +447,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wibash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -453,6 +457,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = wibash/wibash.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"wibash/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
@@ -463,6 +468,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wibash;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
