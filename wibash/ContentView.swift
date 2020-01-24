@@ -20,6 +20,7 @@ struct ContentView: View {
                 .frame(width: 400.0, height: 200.0)
                 .background(Color.black)
             
+            
             Spacer()
             Spacer()
             
@@ -39,6 +40,7 @@ struct ContentView: View {
                     .frame(width: 150, height: 30)
                     .foregroundColor(.white)
                     .background(Color.orange)
+//                commentaire
                     
             }
             Spacer()
