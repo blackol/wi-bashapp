@@ -36,12 +36,23 @@ struct ContentView: View {
             
             Spacer()
 //           il fonctionne pas AcceuilView à cette endroit
-            Button(action: {AccueilView()}) {
+            Button(action:{
+//            My action
+            }) {
                 Text("connexion")
-                    .frame(width: 150, height: 30)
+                    .fontWeight(.bold)
+                    .font(.title)
+                    .padding()
+                    .background(Color.red)
+                    .cornerRadius(40)
                     .foregroundColor(.white)
-                    .background(Color.orange)
+                    .padding(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 40)
+                            .stroke(Color.red, lineWidth: 5)
+                    )
                     
+
             }
             Spacer()
             Spacer()

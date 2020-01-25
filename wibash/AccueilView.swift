@@ -10,7 +10,20 @@ import SwiftUI
 
 struct AccueilView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GeometryReader { geometry in
+            MainView()
+                .frame(width: geometry.size.width, height:geometry.size.height )
+        }
+    }
+}
+
+struct MainView: View {
+    var body: some View {
+        Button(action: {
+            print("open side menu")
+        }) {
+            Text("Menu")
+        }
     }
 }
 
