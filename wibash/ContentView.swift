@@ -35,7 +35,8 @@ struct ContentView: View {
                 .cornerRadius(15.0)
             
             Spacer()
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+//           il fonctionne pas AcceuilView à cette endroit
+            Button(action: {AccueilView()}) {
                 Text("connexion")
                     .frame(width: 150, height: 30)
                     .foregroundColor(.white)
