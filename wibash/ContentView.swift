@@ -37,7 +37,7 @@ struct ContentView: View {
             Spacer()
 //           il fonctionne pas AcceuilView à cette endroit
             Button(action:{
-//            My action
+                print("bouton on")
             }) {
                 Text("connexion")
                     .fontWeight(.bold)
