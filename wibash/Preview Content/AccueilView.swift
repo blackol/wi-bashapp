@@ -10,59 +10,58 @@ import SwiftUI
 
 
 struct AccueilView: View {
-    @State var Menu = false
+    @State var name : String = ""
+    @State var password : String = ""
+        var body: some View {
+                VStack(alignment : .center){
+                        Text("WI-Bash")
+                            .font(.title)
+                            .foregroundColor(.red)
+                            .frame(width: 400.0, height: 200.0)
+                            .background(Color.black)
+                            .edgesIgnoringSafeArea(.horizontal)
     
     
-    var body: some View {
-        let drag = DragGesture()
-            .onEnded {
-                if $0.translation.width < -100 {
-                    withAnimation{
-                        self.Menu = true
+                        Spacer()
+                        Spacer()
+                        Spacer()
+    
+                        TextField("Login ou mail", text: $name)
+                            .padding()
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .cornerRadius(15.0)
+    
+                        SecureField("Mot de passe", text: $password)
+                            .padding()
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .cornerRadius(15.0)
+    
+                        Spacer()
+                        Button(action:{
+    
+                        }) {
+                            Text("connexion")
+                                .fontWeight(.bold)
+                                .font(.title)
+                                .padding()
+                                .background(Color.red)
+                                .cornerRadius(40)
+                                .foregroundColor(.white)
+                                .padding(10)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 40)
+                                        .stroke(Color.red, lineWidth: 5)
+                                )
+    
+                        }
+    
+                        Spacer()
+                        Spacer()
+    
                     }
-                }
-        }
-        return NavigationView {
-            GeometryReader { geometry in
-                ZStack(alignment: .leading) {
-                   MainView(Menu: self.$Menu)
-                       .frame(width: geometry.size.width, height: geometry.size.height)
-                       .offset(x: self.Menu ? geometry.size.width/2 : 0)
-                       .disabled(self.Menu ? true : false)
-                   if self.Menu {
-                        MenuView()
-                       .frame(width: geometry.size.width/2)
-                           .transition(.move(edge: .leading))
-                   }
-               }
-            .gesture(drag)
+    
+                .padding()
             }
-            .navigationBarTitle("Wi-Bash", displayMode: .inline)
-            .navigationBarItems(leading:(
-                Button( action: {
-                    withAnimation{
-                        self.Menu.toggle()
-                    }
-                }){
-                    Image(systemName: "line.horizontal.3")
-                        .imageScale(.large)
-                }
-            ))
-        }
-    }
-}
-
-struct MainView: View {
-    @Binding var Menu: Bool
-    var body: some View {
-        Button(action: {
-            withAnimation{
-             self.Menu = true
-            }
-        }) {
-            Text("")
-        }
-    }
 }
 
 struct AccueilView_Previews: PreviewProvider {
