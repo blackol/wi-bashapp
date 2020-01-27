@@ -25,7 +25,8 @@ struct AccueilView: View {
                         Spacer()
                         Spacer()
                         Spacer()
-    
+                        
+
                         TextField("Login ou mail", text: $name)
                             .padding()
                             .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -42,21 +43,27 @@ struct AccueilView: View {
                         }) {
                             Text("connexion")
                                 .fontWeight(.bold)
-                                .font(.title)
+                                .font(.headline)
+                                .multilineTextAlignment(.center)
                                 .padding()
                                 .background(Color.red)
-                                .cornerRadius(40)
                                 .foregroundColor(.white)
                                 .padding(10)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 40)
-                                        .stroke(Color.red, lineWidth: 5)
-                                )
+                             
     
                         }
-    
-                        Spacer()
-                        Spacer()
+                    Spacer()
+                    Button(action:{
+                        
+                    } ){
+                        Text("S'inscrire")
+                            .font(.largeTitle)
+                            .foregroundColor(.white)
+                            .frame(width: 440.0, height: 100.0)
+                            .background(Color.red)
+                            .padding(.vertical, 10)
+                            .edgesIgnoringSafeArea(.horizontal)
+                    }
     
                     }
     
