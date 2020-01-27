@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-/// <#Description#>
 struct ContentView: View {
     @State var isActive : Bool = true
 //    NavigationView {
@@ -25,35 +24,47 @@ struct ContentView: View {
                     }
             }
             return NavigationView {
-                GeometryReader { geometry in
-                    ZStack(alignment: .leading) {
-                       MainView(Menu: self.$Menu)
-                           .frame(width: geometry.size.width, height: geometry.size.height)
-                           .offset(x: self.Menu ? geometry.size.width/2 : 0)
-                           .disabled(self.Menu ? true : false)
-                       if self.Menu {
-                            MenuView()
-                           .frame(width: geometry.size.width/2)
-                               .transition(.move(edge: .leading))
+                VStack {
+                    GeometryReader { geometry in
+                        ZStack(alignment: .leading) {
+                           MainView(Menu: self.$Menu)
+                               .frame(width: geometry.size.width, height: geometry.size.height)
+                               .offset(x: self.Menu ? geometry.size.width/2 : 0)
+                               .disabled(self.Menu ? true : false)
+                           if self.Menu {
+                                MenuView()
+                               .frame(width: geometry.size.width/2)
+                                   .transition(.move(edge: .leading))
+                           }
                        }
-                   }
-                .gesture(drag)
-                }
-                .navigationBarTitle("Wi-Bash", displayMode: .inline)
-                .navigationBarItems(leading:(
-                    Button( action: {
-                        withAnimation{
-                            self.Menu.toggle()
-                        }
-                    }){
-                        Image(systemName: "line.horizontal.3")
-                            .imageScale(.large)
+                    .gesture(drag)
                     }
-                ))
-                NavigationLink(destination: AccueilView(), isActive: self.$isActive){
-                Text("lol")
+                    .navigationBarTitle("Wi-Bash", displayMode: .inline)
+                    .navigationBarItems(leading:(
+                        Button( action: {
+                            withAnimation{
+                                self.Menu.toggle()
+                            }
+                        }){
+                            Image(systemName: "line.horizontal.3")
+                                .imageScale(.large)
+                        }
+                    ))
+                  
+                        NavigationLink(destination: AccueilView(), isActive: self.$isActive){
+                        Text("")
+                        }
+                    
+                        
+                    Button(action: {
+                        self.isActive = false
+                    }) {
+                        Text("")
+                    }
+                    
+                  
+                    
                 }
-                
             }
         }
     }

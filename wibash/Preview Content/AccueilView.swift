@@ -16,9 +16,9 @@ struct AccueilView: View {
                 VStack(alignment : .center){
                         Text("WI-Bash")
                             .font(.title)
+                            .fontWeight(.black)
                             .foregroundColor(.red)
-                            .frame(width: 400.0, height: 200.0)
-                            .background(Color.black)
+                            .frame(width: 300.0, height: 120.0)
                             .edgesIgnoringSafeArea(.horizontal)
     
     

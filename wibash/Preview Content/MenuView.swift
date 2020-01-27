@@ -33,6 +33,15 @@ struct MenuView: View {
             }
             .padding(.top, 30)
             HStack {
+                Image(systemName: "desktopcomputer")
+                    .foregroundColor(.gray)
+                    .imageScale(.large)
+                Text("Adminstration")
+                    .foregroundColor(.gray)
+                    .font(.headline)
+            }
+            .padding(.top, 30)
+            HStack {
                 Image(systemName: "gear")
                     .foregroundColor(.gray)
                     .imageScale(.large)
@@ -41,6 +50,7 @@ struct MenuView: View {
                     .font(.headline)
             }
             .padding(.top, 30)
+            
             Spacer()
         }
         .padding(.top, 30)
